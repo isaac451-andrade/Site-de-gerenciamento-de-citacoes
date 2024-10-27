@@ -1,18 +1,18 @@
 {
     "builds":[
         {
-            "src":"host/wsgi.py",
+            "src":"setupCitacoes/wsgi.py",
             "use":"@vercel/python",
             "config":{
                 "maxLambadaSize":"15mb",
-                "runtime":"python3.12"
+                "runtime":"python3.10.6"
             }
         }
     ],
     "routes":[
         {
             "src":"/(.*)",
-            "dest":"host/wsgi.py"
+            "dest":"setupCitacoes/wsgi.py"
         }
     ]
 }
