@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #fff;
+    margin-top: 0.7rem;
+    width: 50%;
+    border-radius: 12px;
+    position: relative;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagem-caneta2 {
+    width: 40px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.caixa-numero-citacoes {
+    right: 30%;
+    position: absolute;
+    visibility: hidden;
+    background-color: #fff;
+    font-family: cursive;
+    padding: 12px;
+    border-radius: 6px 12px 18px 24px;
+}
+
+.imagem-caneta2:hover ~ .caixa-numero-citacoes{
+    visibility: visible !important;
+}
+
+.imagem-caneta {
+    width: 100px;
+}
+
+.caixa-user {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+}
+
+.caixa-user img{
+    width: 30px;
+}
+
+.caixa-insere-quote {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.caixa-insere-quote div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.caixa-insere-quote div input{
+    padding: 10px 20px;
+    border: 2px solid rgb(114, 114, 234);
+    border-radius: 20px;
+    font-family: cursive;
+    outline: none;
+    font-size: 16px;
+}
+
+
+
+.campo-autor {
+    max-width: 250px;
+    visibility: hidden;
+    padding: 10px 14px;
+    border: 2px solid rgb(7, 7, 7);
+    border-radius: 20px;
+    font-family: cursive;
+    outline: none;
+    font-size: 16px;
+    width: 65%;
+    transform: translateX(-22px);
+}
+
+
+.button-save {
+    visibility: hidden;
+    padding: 10px 16px;
+    border: none;
+    background-color:chartreuse;
+    font-family: cursive;
+    font-size: 16px;
+    width: 60%;
+    border-radius: 22px;
+    transform: translateX(-16px);
+    cursor: pointer;
+    max-width: 120px;
+}
+
+.button-save:hover {
+    background-color: rgb(151, 242, 60);
+}
+
+.quote-area{
+    margin-top: 20px;
+    width: 90%;
+    padding: 30px;
+    background-color: rgb(244, 176, 94);
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 20px;
+}
+
+.quote-item {
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    font-family: cursive;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 6px 12px 18px 24px;
+
+}

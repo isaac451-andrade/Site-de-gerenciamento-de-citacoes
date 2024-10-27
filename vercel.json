@@ -1,18 +1,27 @@
 {
-    "builds":[
-        {
-            "src":"setupCitacoes/wsgi.py",
-            "use":"@vercel/python",
-            "config":{
-                "maxLambadaSize":"15mb",
-                "runtime":"python3.10.6"
-            }
+    "version": 2,
+    "builds": [
+      {
+        "src": "setupCitacoes/wsgi.py",
+        "use": "@vercel/python",
+        "config": {
+          "maxLambdaSize": "15mb",
+          "runtime": "python3.10.6"
         }
+      },
+      {
+        "src": "build_files.sh",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "static"
+        }
+      }
     ],
-    "routes":[
-        {
-            "src":"/(.*)",
-            "dest":"setupCitacoes/wsgi.py"
-        }
-    ]
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "setupCitacoes/wsgi.py"
+      }
+    ],
+    "outputDirectory": "static"
 }
