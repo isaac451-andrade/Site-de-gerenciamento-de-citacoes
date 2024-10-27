@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Quote</title>
+    <link rel="stylesheet" href="{% static 'paginaCitacoes/css/main.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Your Quote</h1>
+        <img class="imagem-caneta" src="{% static 'loginCadastro/images/caneta.jpg' %}" alt="Imagem de Caneta">
+        <div class="caixa-user">
+            <img src="{% static 'paginaCitacoes/images/user.jpg' %}" alt="Imagem de Usuario">
+            <h3>{{user}}</h3>
+        </div>
+    </header>
+
+    <main>
+        <form action="{% url 'mainPage' %}" method="post" class="caixa-insere-quote"> {% csrf_token %}
+            <div>
+                <input type="text" placeholder="Escreva um quote..." name="quote" id="quote">
+                <img class="imagem-caneta2" src="{% static 'paginaCitacoes/images/caneta2.jpg' %}" alt="Icone de caneta quote">
+                <span class="caixa-numero-citacoes">Qtd. de citações: {{numero_citacoes}}</span>
+            </div>
+            <input class="campo-autor" name="campo-autor" id="campo-autor" type="text" placeholder="Nome do autor...">
+            <button id="button-save" class="button-save">Salvar</button>
+        </form>
+
+        <section class="quote-area">
+            {% for citacao in citacoes %}
+                <div class="quote-item">
+                    <h3>{{citacao.autor}}</h3>
+                    <p>"{{citacao.conteudo}}"</p>
+                </div>
+            {% endfor %}
+
+ 
+        </section>
+
+    </main>
+    
+    <script src="{% static 'paginaCitacoes/js/main.js' %}"></script>
+</body>
+</html>

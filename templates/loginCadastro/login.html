@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Quote</title>
+    <link rel="stylesheet" href="{% static 'loginCadastro/css/loginCadastro.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Your Quote</h1>
+        <img class="imagem-caneta" src="{% static 'loginCadastro/images/caneta.jpg' %}" alt="Imagem de Caneta">
+    </header>
+
+    <main>
+        <div class="caixa-login-cadastro">
+            <img class="imagem-form" src="{% static 'loginCadastro/images/imagemLadoInicio.jpg' %}" alt="">
+            
+            <form class="form form-login" action="{% url 'loginPage' %}" method="post"> {% csrf_token %}
+                <h2 class="titulo-forms">Login</h2>
+                <div class="caixa-input">
+                    <label for="nomeUser">Nickname</label>
+                    <input oninput="validateName()" type="text" class="nomeUser required" name="nomeUser" id="nomeUser" placeholder="Digite seu nome de usuário..." required>
+                    <span class="span-required">Nickname tem que ter no mínimo 3 caracteres</span>
+                </div>
+                <div class="caixa-input">
+                    <label for="senhaUser">Senha</label>
+                    <input oninput="validateSenhaLogin()" type="password" class="senhaUser required" name="senhaUser" id="senhaUser" placeholder="Digite sua senha..." required>
+                    <span class="span-required">Senha tem que ter no mínimo 8 caracteres</span>
+                </div>
+                <div class="caixa-button-enviar">
+                    <input type="submit" value="Entrar">
+                </div>
+                <a class="link-transita" href="{% url 'cadastroPage' %}">Não tem conta? Cadastre-se!</a>
+            </form>
+
+        </div>
+    </main>
+    <script src="{% static 'loginCadastro/js/login.js' %}"></script>
+</body>
+</html>
